@@ -2,7 +2,7 @@
     padding-bottom: 2rem;
 
     &__bio-image {
-        height: 57vh;
+        height: 300px;
         // width: 100%;
         @include overlay_picture;
         display: flex;
