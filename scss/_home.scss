@@ -7,6 +7,8 @@
     @include overlay_picture;
 
     &__name {
+        width: 80%;
+        margin: 0 auto;
         font-size: 5rem;
         padding: 1rem;
         border-bottom: 2px solid $third-color;
