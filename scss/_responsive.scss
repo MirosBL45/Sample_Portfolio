@@ -1,0 +1,167 @@
+@include media_md {
+    .menu-btn {
+        visibility: hidden;
+    }
+
+    .nav {
+        visibility: visible;
+
+        .menu-nav {
+            display: block;
+            transform: translateY(0);
+            height: 100%;
+            background: transparent;
+            text-align: right;
+
+            &__item {
+                display: inline;
+                padding-right: 1.5rem;
+            }
+
+            &__link {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+
+    .about__bio {
+        font-size: 1.5rem;
+    }
+
+
+    .projects {
+        &__bio-image {
+            height: 40vh;
+
+            .text_secondary {
+                font-size: 3rem;
+            }
+        }
+
+        &__items {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .project_info {
+            font-size: 1.5rem;
+        }
+    }
+
+    .contact,
+    .home {
+        padding-top: 40vh;
+    }
+
+
+    .contact__list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@include media_lapTop {
+    .projects__item {
+        position: relative;
+        @include big_border;
+        overflow: hidden;
+        cursor: pointer;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: $secondary-color;
+            opacity: 0;
+            @include transition-ease;
+        }
+
+        &:hover {
+            &::after {
+                top: 0;
+                opacity: 0.7;
+            }
+
+            .projects__btns .center_div .projects__btn {
+                opacity: 1;
+            }
+        }
+    }
+
+
+
+    .projects {
+
+        .projects__btns {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+            display: grid;
+            // place-items: center;
+            justify-content: center;
+            align-items: center;
+
+            .center_div {
+                background: transparent;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                align-items: center;
+                // justify-content: end;
+                text-align: center;
+                position: relative;
+
+                .projects__btn {
+                    display: inline-block;
+                    position: relative;
+
+                    opacity: 0;
+                    color: set-text-color($secondary-color);
+                    @include transition-ease;
+
+                    &:hover {
+                        color: set-text-color(set-text-color($secondary-color));
+
+                        .eye_icon {
+                            @include transition-ease;
+                            fill: set-text-color(set-text-color($secondary-color));
+                        }
+                    }
+
+                    .eye_icono {
+                        position: absolute;
+                        top: 13%;
+                        left: 0%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@include media_lg {
+    .projects {
+        &__items {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .contact__list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+@include media_xl {
+    .projects {
+        &__bio-image {
+            height: 50vh;
+        }
+    }
+}

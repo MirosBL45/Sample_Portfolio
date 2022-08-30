@@ -1,0 +1,52 @@
+.contact {
+    height: 100%;
+    padding-top: 30vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include overlay_picture;
+
+    h2 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .social_icons {
+        display: block;
+        position: inherit;
+        margin-top: 1rem;
+    }
+
+    .info_contact {
+        padding: 0.5rem 2.5rem;
+    }
+
+    .mini_contact {
+        text-transform: uppercase;
+    }
+
+    .copyright {
+        padding: 0.5rem;
+        border-radius: 5px;
+        background:
+            linear-gradient(to right,
+                rgba($primary-color, 0.3),
+                rgba($primary-color, 0.3));
+        transform:
+            rotate(90deg) translate(-4.5rem, -4.5rem);
+    }
+
+    // .copyright {
+    //     transform:
+    //         rotate(90deg) translate(-4.5rem, -3.5rem);
+    // }
+}

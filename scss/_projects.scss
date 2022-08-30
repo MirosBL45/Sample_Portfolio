@@ -1,0 +1,138 @@
+.projects {
+    padding-bottom: 2rem;
+
+    &__bio-image {
+        height: 30vh;
+        // width: 100%;
+        @include overlay_picture;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+
+        .text_secondary {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__items {
+        width: 60vw;
+        margin: 1.5rem auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    &__item {
+        position: relative;
+        @include big_border;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    //     &::after {
+    //         content: '';
+    //         position: absolute;
+    //         top: 100%;
+    //         left: 0;
+    //         height: 100%;
+    //         width: 100%;
+    //         background: $secondary-color;
+    //         opacity: 0;
+    //         @include transition-ease;
+    //     }
+
+    //     &:hover {
+    //         &::after {
+    //             top: 0;
+    //             opacity: 0.7;
+    //         }
+
+    //         .projects__btns .center_div .projects__btn {
+    //             opacity: 1;
+    //         }
+    //     }
+    // }
+
+
+
+
+
+
+
+    &__btns {
+        position: absolute;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        // display: grid;
+        // place-items: centar;
+
+        .center_div {
+            padding-top: 0.3rem;
+            background: $secondary-color;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            // align-items: center;
+            // justify-content: end;
+            text-align: center;
+            position: relative;
+
+            .projects__btn {
+                display: inline-block;
+                position: relative;
+
+                color: set-text-color($secondary-color);
+                @include transition-ease;
+
+                &:hover {
+                    color: set-text-color(set-text-color($secondary-color));
+
+                    .eye_icon {
+                        @include transition-ease;
+                        fill: set-text-color(set-text-color($secondary-color));
+                    }
+                }
+
+                .eye_icono {
+                    position: absolute;
+                    top: 13%;
+                    left: 0%;
+                }
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+    .social_icons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .copyright {
+        transform:
+            rotate(90deg) translate(-4.5rem, -3.5rem);
+    }
+
+    .project_info {
+        text-align: center;
+        margin: 0 auto 1.5rem;
+        font-size: 1rem;
+        max-width: 70%;
+        line-height: 1.3;
+    }
+}

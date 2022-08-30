@@ -1,0 +1,34 @@
+.home {
+    height: 100%;
+    padding-top: 30vh;
+    overflow: hidden;
+    align-items: center;
+    text-align: center;
+    @include overlay_picture;
+
+    &__name {
+        font-size: 5rem;
+        padding: 1rem;
+        border-bottom: 2px solid $third-color;
+
+        &--last {
+            color: $secondary-color;
+            font-weight: 700;
+        }
+    }
+
+    &__description {
+        padding: 0.2rem 1rem;
+    }
+
+    .copyright {
+        padding: 0.5rem;
+        border-radius: 5px;
+        background:
+            linear-gradient(to right,
+                rgba($primary-color, 0.3),
+                rgba($primary-color, 0.3));
+        transform:
+            rotate(90deg) translate(-4.5rem, -4.5rem);
+    }
+}
